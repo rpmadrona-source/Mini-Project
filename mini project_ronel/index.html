@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Profile Project </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7ebef;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #094e9e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: rgb(230, 230, 87);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #4a90e2;
+            display: block;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-info h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        button {
+            background-color: #1261bd;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        #message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .profile-pic {
+                width: 160px;
+                height: 155px;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Personal Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="#profile">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="profile" class="section">
+            <img src="profile.jpg"
+                 alt="Ronel Madrona" class="profile-pic" onclick="clickPhoto()">
+            
+            <div class="profile-info">
+                <h1>Ronel Madrona</h1>
+                <p>"BASKETBALL PLAYER"</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me:</h2>
+            <p class="about-text">
+                Hello! I'm a Passionate Basketball Player. 
+    
+            </p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>My Skills:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMMUNICATION IN MY TEAM</td>
+                    </tr>
+                    <tr>
+                        <td>POWER FORWARD</td> 
+                    </tr>
+                    <tr>
+                        <td>POINT GUARD</td>
+                    </tr>
+                    <tr>
+                        <td>SHOOTING GUARD</td>
+                    </tr>
+                    <tr>
+                        <td>TEAM CAPTAIN</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me:</h2>
+            <div id="message"></div>
+            
+            <form id="myForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userMessage">Your Message:</label>
+                    <textarea id="userMessage" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Send us a Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        function clickPhoto() {
+            alert(' Thankyou for Response!\nUse the contact form below to say hello!');
+        }
+
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('userMessage').value;
+            
+            if (name.length < 2) {
+                showMessage(' Name must be at least 2 characters!', 'error');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                showMessage(' Please enter a valid email!', 'error');
+                return;
+            }
+            
+            if (message.length < 10) {
+                showMessage(' Message must be at least 10 characters!', 'error');
+                return;
+            }
+            
+            showMessage(' Message sent successfully! I will reply soon! 🎉', 'success');
+            this.reset(); // Clear form
+        });
+
+        function showMessage(text, type) {
+            const msgDiv = document.getElementById('message');
+            msgDiv.textContent = text;
+            msgDiv.className = type;
+            msgDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                msgDiv.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
